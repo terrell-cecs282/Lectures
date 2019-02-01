@@ -23,12 +23,13 @@ random_device rd;
 // Each compiler is responsible for choosing a default_random_engine 
 // implementation. We can manually choose our own instead.
 // mt19937 is a "Mersenne Twister" RNG. 
-mt19937 engine(rd());
+
+mt19937 engine = mt19937(rd());
 
 
 // We now implement the various functions.
 int getPrizeDoor() {
-	uniform_int_distribution<int> doors(1, 3);
+	uniform_int_distribution<int> doors{ 1, 3 };
 	return doors(engine);
 }
 
