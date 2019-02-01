@@ -19,7 +19,11 @@ using namespace std;
 // a global random number generator instead of making one each time
 // getPrizeDoor is called.
 random_device rd;
-default_random_engine engine(rd());
+
+// Each compiler is responsible for choosing a default_random_engine 
+// implementation. We can manually choose our own instead.
+// mt19937 is a "Mersenne Twister" RNG. 
+mt19937 engine(rd());
 
 
 // We now implement the various functions.
