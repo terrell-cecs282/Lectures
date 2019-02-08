@@ -27,6 +27,9 @@ int main(int argc, char* argv[]) {
 	// The copy-by-value thing is important, especially for long strings.
 	string big = "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890";
 	cout << "This string is " << big.size() << " bytes in size" << endl;
+
+	passStringByValue(big); // makes a DUPLICATE of the string :(
+	passStringByPointer(&big); // no duplicate!
 }
 
 void passStringByValue(string a) {
