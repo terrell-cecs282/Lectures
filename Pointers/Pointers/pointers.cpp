@@ -36,13 +36,14 @@ int main(int argc, char* argv[]) {
 	// p is still in automatic storage, because it is a local variable.
 	// However, its value is not an integer; its value is a POINTER (address)
 	// to another variable of type int.
-
+	cout << "Address: " << p << endl;
 	// I can do three things with a pointer variable:
 	// 1. Read its current value.
 	cout << *p << endl; // "Dereferencing"
 
 	// 2. Assign a new address (point to a new target).
 	p = &y;
+	cout << "Address: " << p << endl;
 
 	// 3. Assign a new value to the target.
 	*p = 100;

@@ -19,6 +19,7 @@ void passStringPointer(string *p) {
 	// methods somehow!
 
 	int size2 = (*p).size();
+
 	// Dereference p to get its actual string value; call size on that.
 
 	// Ugly! Enter the arrow operator:
