@@ -38,4 +38,7 @@ int main(int argc, char* argv[]) {
 	//   lengths are different types.
 	// * Size must be known at compile time: can't base it on input values or
 	//   parameters.
+	// * Indices are not bounds checked at runtime.
+
+
 }
