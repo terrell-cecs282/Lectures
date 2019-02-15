@@ -9,7 +9,7 @@ void passStringByPointer(string *p);
 int main(int argc, char* argv[]) {
 	// strings work very similarly as in Java, with notable exceptions.
 	string name = "Neal";
-	
+
 	// First exception: like ALL C++ values, strings are copy-by-value.
 	string second = name;
 	// second is a full duplicate of "name" with its own value, NOT a reference
