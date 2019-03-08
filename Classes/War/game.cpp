@@ -7,7 +7,7 @@ using namespace std;
 
 int PlayOneRound(Deck &p1, Deck &p2);
 
-#define TESTING
+#define GAME
 
 // A C++ application can only have one main. This main will only be compiled if the
 // symbol TESTING is #define'd. Otherwise it will be ignored.
