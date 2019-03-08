@@ -10,7 +10,20 @@ SuperiorLinkedStack & SuperiorLinkedStack::operator=(const SuperiorLinkedStack &
 		// Self-assignment. Someone wrote x=x. We don't want to do this code!! Abort!
 		return *this;
 	}
+
 	cout << "Cloning stack of size " << rhs.mSize << endl;
+	
+	// Since lhs already exists, we have to clear out any nodes that we currently own.
+	if (mSize > 0) {
+		cout << "First, clearing the lhs stack of size " << mSize << endl;
+		Node *walker = mHead;
+		while (walker != nullptr) {
+			cout << "Destroying node of " << walker->mData << endl;
+			Node *next = walker->mNext;
+			delete walker;
+			walker = next;
+		}
+	}
 
 	mSize = rhs.mSize;
 	// "Clone" / "deep copy" other, allocating our own Node for each in other.
@@ -56,7 +69,8 @@ SuperiorLinkedStack::~SuperiorLinkedStack() {
 	mSize = 0;
 }
 
-SuperiorLinkedStack::SuperiorLinkedStack(const SuperiorLinkedStack &other) {
+SuperiorLinkedStack::SuperiorLinkedStack(const SuperiorLinkedStack &other)
+	: mSize(0), mHead(nullptr) {
 	*this = other;
 }
 

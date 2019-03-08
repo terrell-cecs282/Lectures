@@ -9,7 +9,7 @@ DemoClass* ReturnByPointer();
 int main(int argc, char* argv[]) {
 	DemoClass d1; // This object takes 40KB of automatic storage, which is quite a lot!
 	DemoClass d2 = ReturnByValue();
-	DemoClass d3 = ReturnByReference();
+	DemoClass &d3 = ReturnByReference();
 	DemoClass *p = ReturnByPointer();
 	
 
@@ -22,7 +22,8 @@ int main(int argc, char* argv[]) {
 	// WARNING: p itself still points to that dynamic memory, and nothing stops us
 	// from using p.
 
-	cout << p->front();
+	cout << p->front() << endl;
+	cout << "This is C++, so I won't bet my reputation on it..." << endl;
 }
 
 DemoClass ReturnByValue() {
@@ -39,7 +40,7 @@ DemoClass* ReturnByPointer() {
 	// allocate it somewhere other than automatic storage. The alternative: dynamic 
 	// storage.
 
-	DemoClass *d = new DemoClass(); // constructs a DemoClass instance in dyamic storage.
+	DemoClass *d = new DemoClass{}; // constructs a DemoClass instance in dyamic storage.
 	// LOTS OF QUESTIONS!
 	// Why does "new" return a pointer?
 	
