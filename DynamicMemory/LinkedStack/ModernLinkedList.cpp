@@ -12,8 +12,6 @@ void ModernLinkedList::PushFront(int value) {
 	mHead = std::move(newNode);
 
 	// Increase the size by 1.
-
-	mHead = std::move(nullptr);
 	mSize++;
 }
 
