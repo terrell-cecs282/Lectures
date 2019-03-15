@@ -3,12 +3,13 @@
 #include "BetterLinkedStack.h"
 #include "SuperiorLinkedStack.h"
 #include "PerfectLinkedStack.h"
+#include "ModernLinkedStack.h"
 #include <iostream>
 
 using namespace std;
 
 // We'll use this to switch between stack implementations quickly during lecture.
-typedef BrokenLinkedStack MyStack;
+typedef ModernLinkedStack MyStack;
 
 // For the end.
 MyStack GetNewStack();
@@ -27,9 +28,10 @@ int main() {
 	cout << "Top of ps: " << ps.Peek() << endl;
 	cout << endl;
 
+
 	// Even with BetterLinkedStack, we aren't out of the woods. Yes, we clean up Nodes
 	// when popping... but what happens when we copy a BetterLinkedStack value?
-	if (true) {
+	/*if (true) {
 		MyStack p2 = ps;
 		p2.Push(5);
 		cout << "Popped: " << p2.Pop() << endl;
@@ -66,4 +68,5 @@ MyStack GetNewStack() {
 	local.Push(97);
 	cout << "Returning local linked stack" << endl;
 	return local;
+	*/
 }

@@ -128,6 +128,8 @@
     <ClInclude Include="BetterLinkedStack.h" />
     <ClInclude Include="BrokenLinkedStack.h" />
     <ClInclude Include="LinkedStack.h" />
+    <ClInclude Include="ModernLinkedList.h" />
+    <ClInclude Include="ModernLinkedStack.h" />
     <ClInclude Include="PerfectLinkedStack.h" />
     <ClInclude Include="SuperiorLInkedStack.h" />
   </ItemGroup>
@@ -136,6 +138,8 @@
     <ClCompile Include="BrokenLinkedStack.cpp" />
     <ClCompile Include="LinkedStack.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ModernLinkedList.cpp" />
+    <ClCompile Include="ModernLinkedStack.cpp" />
     <ClCompile Include="PerfectLinkedStack.cpp" />
     <ClCompile Include="SuperiorLinkedStack.cpp" />
   </ItemGroup>
