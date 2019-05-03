@@ -15,6 +15,13 @@ private:
 		mPtr = nullptr;
 	}
 
+
+
+
+
+
+
+
 public:
 	// Default constructor: sets the pointer to null.
 	Owner() : mPtr(nullptr) {}
@@ -23,7 +30,7 @@ public:
 	explicit Owner(T* ptr) : mPtr(ptr) {}
 	
 	// Move constructor: take ownership of the pointer of another Owner, and reset that Owner.
-	Owner(Owner<T> &&moving) : mPtr(std::move(other.mPtr)) {
+	Owner(Owner<T> &&moving) : mPtr(std::move(moving.mPtr)) {
 		moving.Reset();
 	}
 
