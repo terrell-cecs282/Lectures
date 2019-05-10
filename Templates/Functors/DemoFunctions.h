@@ -58,6 +58,39 @@ struct MultipleOfThreeCondition {
 	}
 };
 
+struct MultipleOfFiveCondition{
+	bool operator()(int value) {
+	return value % 5 == 0;
+}
+};
+
+
+
+struct BetweenOneAndTenCondition {
+	bool operator()(int value) {
+		return 1 <= value && value <= 10;
+	}
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 struct MultipleOfX {
 	// A class with a public variable automatically gets a constructor that initializes
 	// that variable.
@@ -66,3 +99,10 @@ struct MultipleOfX {
 		return value % divisor == 0;
 	}
 };
+
+
+
+
+
+
+
