@@ -60,8 +60,8 @@ struct MultipleOfThreeCondition {
 
 struct MultipleOfFiveCondition{
 	bool operator()(int value) {
-	return value % 5 == 0;
-}
+		return value % 5 == 0;
+	}
 };
 
 
