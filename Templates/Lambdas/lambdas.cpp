@@ -51,6 +51,8 @@ int main() {
 	intPred = NegativeCondition{};
 	intPred = IsNegative;
 
+	intPred(100);
+
 	// This lets us do interesting things, like dynamic dispatch without inheritance.
 	int x;
 	cin >> x;
@@ -59,5 +61,36 @@ int main() {
 	}
 
 	cout << intPred(100) << endl; // do you know what the output will be right now?
-	}
+
+
+
+
+
+	// ONE FINAL CONCERN WITH LAMBDAS:
+	// Suppose I want to call find_if, with a predicate that uses an
+	// input from the user, instead of a value known at compile time.
+	cout << "Search for a value that is less than what? ";
+	int input;
+	cin >> input;
+	// I want to be able to write this find_if call:
+	/*
+	itr = std::find_if(values.begin(), values.end(),
+		[](int value) {return value < input; });
+	*/
+	// Error: the lambda is a separate function; it does not have access to
+	// local values declared in this function.
+
+	// We can fix this by *capturing* (think: copying) any local variables
+	// we need to do our work.
+	itr = std::find_if(values.begin(), values.end(),
+		[input](int value) {return value < input; });
+		//^^^^ That's what this is for!!!
+
+	// This form of "capture list" performs a copy-construction of the given variable.
+	// What if I can't/don't want to copy-construct? We can capture by reference instead.
+	itr = std::find_if(values.begin(), values.end(),
+		[&input](int value) {return value < input; });
+	// This doesn't make sense for int, but it could be useful for capturing large objects
+	// (vectors?) or things that can't be copied, like unique_ptr.
+
 }
