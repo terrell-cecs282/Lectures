@@ -10,7 +10,7 @@ int main(int argc, char* argv[]) {
 
 	double descriminant = b * b - 4 * a * c;
 	if (descriminant < 0) {
-		cout << "No real soultions" << endl;
+		cout << "No real solutions" << endl;
 		return 0;
 	}
 	if (descriminant == 0) {
