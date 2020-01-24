@@ -24,7 +24,19 @@ int main(int argc, char* argv[]) {
 	double area = pi * y * y; // double * int * int --> double
 
 
-	int i = 5.5;
+	// Tragically, C++ performs implicit *coercions* between numeric types,
+	// even when that conversion loses data.
+	int i = 5.5; // Tragedy!!!
+
+	// Modern version of C++ introduce an optional assignment syntax that never
+	// "narrows" data like this.
+	// ERROR if we uncomment this line:
+	//	int j = { 5.5 };
+	// or even
+	// int k { 5.5 };
+	// or even
+	// int m = int{ 5.5 };
+
 
 
 	// What is the value of this variable?
@@ -63,7 +75,7 @@ int main(int argc, char* argv[]) {
 
 	// char types are for characters. character literals are enclosed in ''
 	char c = 'A';
-	
+
 
 	// size and range of integer types
 	// nifty C++ operator: sizeof
@@ -85,5 +97,5 @@ int main(int argc, char* argv[]) {
 	// signed vs unsigned
 	signed short ss = 32768; // the "signed" is optional and rarely used
 	unsigned short us = 32768; // use the MSB for data, not for a sign. 
-							   // char, short, int, long can all be unsigned
+								// char, short, int, long can all be unsigned
 }
