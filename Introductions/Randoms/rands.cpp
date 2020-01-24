@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
 	// Create only ONE random_device.
-	random_device rd;
+	random_device rd{};
 	// Create only ONE engine.
 	default_random_engine engine{ rd() };
 
