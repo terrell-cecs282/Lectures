@@ -21,6 +21,7 @@ int main(int argc, char* argv[]) {
 			chosen = switchDoor(chosen, reveal);
 		}
 
+		cout << "You've chosen door number " << chosen << "..." << endl;
 		if (chosen == reveal) {
 			cout << "You win!" << endl;
 			int prizeNum = getPrizeNumber();
