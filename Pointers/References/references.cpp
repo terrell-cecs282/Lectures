@@ -34,7 +34,6 @@ void passStringPointer(string *p) {
 
 	// WARNING WARNING WARNING:
 	// Indexing pointers does NOT do what you think!
-	// char n = p[0]; DON'T DO IT.
 	char n = (*p)[0]; // no nice way to do this.
 }
 
@@ -53,6 +52,25 @@ void passStringByReference(string &r) {
 	int size = r.size(); // normal "." syntax.
 	string concat = r + "Hello"; // normal operator syntax.
 	char n = r[0]; // normal indexing syntax.
+
+	r[0] = 'X';
 }
 
 // So why choose one over the other?
+
+// Finally, the const keyword, which declares a variable that cannot
+// be mutated or reassigned.
+
+void passStringByConstReference(const string &r) {
+	int size = r.size(); // Allowed; does not mutate.
+	cout << r[0]; // Allowed; does not mutate.
+
+	char c = r[0] + 1; // Allowed; does not mutate.
+
+	// r = "Hello"; //Not allowed; reassigns.
+	// r[0] = 'X'; // Not allowed; mutates.
+	// r.append("Hello"); Not allowed; mutates.
+
+	string copy = r;
+	copy[0] = 'X'; // Allowed; copy is not const, is a full duplicate of r.
+}

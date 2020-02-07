@@ -37,5 +37,5 @@ void passStringByValue(string a) {
 }
 
 void passStringByPointer(string *p) {
-	cout << "Received " << *p << " by value." << endl;
+	cout << "Received " << *p << " by pointer." << endl;
 }

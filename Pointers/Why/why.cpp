@@ -4,9 +4,15 @@ using namespace std;
 void changeOne(int *);
 void getCannon(double *, double *);
 
+void tryChange(int p) {
+	p = 100;
+}
+
 int main(int argc, char* argv[]) {
 	// What can pointers do for us? Why bother?
 	int x = 0, y = 0;
+
+	tryChange(x);
 
 	// By passing a pointer to a local variable to another function, that
 	// function can change OUR local values!
@@ -29,6 +35,7 @@ int main(int argc, char* argv[]) {
 	// from a function? NO!
 	double angle, gunpowder;
 	getCannon(&angle, &gunpowder);
+
 	// So there's our second reason: multiple return values.
 
 	return 0;
