@@ -31,12 +31,12 @@ int main() {
 
 	// Even with BetterLinkedStack, we aren't out of the woods. Yes, we clean up Nodes
 	// when popping... but what happens when we copy a BetterLinkedStack value?
-	/*if (true) {
-		MyStack p2 = ps;
+	if (true) {
+		/*MyStack p2 = ps;
 		p2.Push(5);
 		cout << "Popped: " << p2.Pop() << endl;
 		cout << "Popped: " << p2.Pop() << endl;
-		cout << "Top of ps: " << ps.Peek() << endl;
+		cout << "Top of ps: " << ps.Peek() << endl;*/
 
 		// Draw a picture of what happens with BetterLinkedStack.
 
@@ -67,6 +67,6 @@ MyStack GetNewStack() {
 	local.Push(98);
 	local.Push(97);
 	cout << "Returning local linked stack" << endl;
-	return local;
-	*/
+	return local; // return a COPY of this stack
+	// "move" local back to p3
 }

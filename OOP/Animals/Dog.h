@@ -15,6 +15,10 @@ private:
 	// namely "mWeight". But because that variable was declared private,
 	// we cannot access it directly in Dog.
 
+
+
+
+
 public:
 	// When writing a derived-class constructor, we MUST use the initializer list
 	// to call one of the base-class constructors. Otherwise, the variables

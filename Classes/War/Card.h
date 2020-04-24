@@ -41,6 +41,9 @@ public:
 	inline CardSuit GetSuit() const { return mSuit; }
 	inline CardKind GetKind() const { return mKind; }
 
+	inline void SetSuit(CardSuit suit) { mSuit = suit; }
+	inline void SetKind(CardKind kind) { mKind = kind; }
+
 	operator std::string() const;
 
 	// In C++, an operator is just another function, whose name happens to be 

@@ -1,4 +1,5 @@
 #pragma once
+#include <memory>
 // Our own (decent) take on a unique pointer that we'll call Owner. 
 template<typename T>
 class Owner {
@@ -80,7 +81,7 @@ public:
 	template<typename U>
 	Owner<T>& operator=(Owner<U> &&moving) {
 		Release();
-		mPtr = std::move(other.mPtr);
+		mPtr = std::move(moving.mPtr);
 		moving.Reset();
 		return *this;
 	}

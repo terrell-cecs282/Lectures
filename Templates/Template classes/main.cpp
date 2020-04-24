@@ -18,6 +18,6 @@ int main() {
 	s2.Push("Hello!");
 	s2.Push("Goodbye!");
 
-	//TemplateLinkedStack<unique_ptr<string>> s3;
-	//s3.Push(std::make_unique<string>("Test"));
+	TemplateLinkedStack<unique_ptr<string>> s3;
+	s3.Push(std::make_unique<string>("Test"));
 }

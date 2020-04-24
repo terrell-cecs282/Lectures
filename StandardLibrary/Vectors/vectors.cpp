@@ -61,14 +61,17 @@ int main(int argc, char* argv[]) {
 	// elements) when it equals the iterator returned by ".end()".
 
 	// Most commonly, we'll use a loop to go through each element in the vector.
-	for (vector<int>::iterator itr2 = v.begin(); itr2 != v.end(); itr2++) {
-		// use *itr2
+	for (auto itr2 = v.begin(); itr2 != v.end(); itr2++) {
+		*itr = *itr * 2;
+		cout << *itr2;
 	}
 
 	findMean(v2);
 	findMeanRef(v2);
 
-	// Vectors are used for almost EVERYTHING involving data structures.
+
+
+	// Iterators are used for almost EVERYTHING involving data structures.
 
 	// insert: insert a value at the position of the given iterator.
 	v2.insert(v2.begin(), 100);
@@ -79,6 +82,9 @@ int main(int argc, char* argv[]) {
 
 	// or, remove all values between two iterators (excluding the end iterator)
 	v2.erase(v2.begin(), v2.begin() + 3);
+
+	
+
 
 	// Some data structures support reverse iterators.
 	for (auto rItr = v2.rbegin(); rItr != v2.rend(); rItr++) {

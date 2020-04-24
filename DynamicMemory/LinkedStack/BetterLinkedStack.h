@@ -10,7 +10,7 @@ private:
 
 	Node *mHead;
 	int mSize;
-
+	// member-wise shallow copy
 public:
 	BetterLinkedStack();
 	void Push(int value);

@@ -28,7 +28,7 @@ Card::operator std::string() const {
 }
 
 bool Card::operator<(Card rhs) const {
-	return static_cast<int>(mKind) < static_cast<int>(rhs.mKind);
+	return (int)mKind < static_cast<int>(rhs.mKind);
 }
 
 bool Card::operator>(Card rhs) const {

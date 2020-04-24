@@ -8,10 +8,12 @@ int max(int a, int b);
 
 // Enter the "template": given a list of "template parameters", we can write a function definition
 // in terms of the template parameter types.
+
 template<typename T>
 T max2(T a, T b) {
 	return a < b ? b : a;
 }
+
 
 // Templates can give us functions that work on arrays of any size. We make the data type AND THE SIZE! of the array
 // parameters of the template.
@@ -55,6 +57,8 @@ int Count(TItr begin, TItr end, const TData& value) {
 	}
 	return count;
 }
+
+
 // We now know enough to write our own versions of many STL functions!
 template<typename TItr, typename TData>
 TItr Find(TItr begin, TItr end, const TData& value) {

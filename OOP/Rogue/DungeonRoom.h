@@ -22,5 +22,3 @@ public:
 	virtual std::vector<std::string> GetActions() const;
 	virtual bool DoAction(int number);
 };
-
-#endif

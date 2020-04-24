@@ -25,7 +25,7 @@ public:
 
 
 
-	virtual void Speak() const {
+	inline virtual void Speak() const {
 		std::cout << "I am an animal!" << std::endl;
 	}
 };

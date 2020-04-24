@@ -61,18 +61,28 @@ PerfectLinkedStack& PerfectLinkedStack::operator=(PerfectLinkedStack &&rhs) {
 	}
 
 	cout << "Moving stack of size " << rhs.mSize << endl;
+	
+	// Delete our current mHead, since we are taking over someone else's.
+	delete mHead;
+
+	// Copy fields.
 	mSize = rhs.mSize;
 	mHead = rhs.mHead;
+
+	// Let the other object know they've been taken over.
 	rhs.mSize = 0;
 	rhs.mHead = nullptr;
+
 	return *this;
 }
 
-PerfectLinkedStack::PerfectLinkedStack(PerfectLinkedStack &&other) {
-	// If we just write "*this = other", we'll call the Copy Assignment Operator.
-	// To call Move Assignment, we use std::move to mark the variable "other" as moveable.
+PerfectLinkedStack::PerfectLinkedStack(PerfectLinkedStack &&other)
+	: mSize(other.mSize), mHead(other.mHead) { // this is a shallow copy of the head node
 	cout << "Move constructor" << endl;
-	*this = std::move(other);
+
+	// Let the other object know they've been taken over.
+	other.mSize = 0;
+	other.mHead = nullptr;
 }
 
 void PerfectLinkedStack::Push(int value) {
